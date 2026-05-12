@@ -10,6 +10,42 @@ Diseñado para responder **3 preguntas** ante cualquier advisory:
 
 ---
 
+## Instalación (1 minuto)
+
+**Requisitos:** [Claude Code](https://docs.claude.com/claude-code) instalado.
+
+### Paso 1 — Clonar repo
+
+```bash
+git clone https://github.com/anegri93/audit-repo.git ~/audit-repo
+```
+
+### Paso 2 — Linkear como skill
+
+**Opción A (global, todos tus proyectos):**
+```bash
+mkdir -p ~/.claude/skills
+ln -s ~/audit-repo ~/.claude/skills/audit-repo
+```
+
+**Opción B (solo un proyecto):**
+```bash
+cd /ruta/a/tu/proyecto
+mkdir -p .claude/skills
+ln -s ~/audit-repo .claude/skills/audit-repo
+```
+
+### Paso 3 — Verificar
+
+```bash
+ls ~/.claude/skills/audit-repo/SKILL.md
+# debe imprimir la ruta al archivo
+```
+
+Listo. Abrir Claude Code en cualquier repo y usar `/audit-repo`.
+
+---
+
 ## Uso rápido (Claude Code)
 
 ```
@@ -25,20 +61,6 @@ Q3. IOCs en disco:                  sí / no  + detalle
 
 Veredicto: ✅ NO AFECTA  /  ❌ AFECTA  /  ⚠️ INCIERTO
 ```
-
----
-
-## Instalación skill
-
-```bash
-# Global
-ln -s /path/to/audit-repo ~/.claude/skills/audit-repo
-
-# O por proyecto
-ln -s /path/to/audit-repo <proyecto>/.claude/skills/audit-repo
-```
-
-Verificar: `ls ~/.claude/skills/audit-repo/SKILL.md`
 
 ---
 
